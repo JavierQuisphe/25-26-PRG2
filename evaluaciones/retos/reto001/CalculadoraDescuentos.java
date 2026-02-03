@@ -25,7 +25,6 @@ public class CalculadoraDescuentos {
                 continue;
             }
             
-            // Carrito de compra y precios
             String[] nombres_p = new String[MAX_PROD];
             double[] precios_p = new double[MAX_PROD];
             int[] cants_p = new int[MAX_PROD];
@@ -55,7 +54,6 @@ public class CalculadoraDescuentos {
                 continue;
             }
 
-            // Calcular total del carrito
             double p_total = calcularTotal(precios_p, cants_p, n_prods);
             int c_total = calcularCantidad(cants_p, n_prods);
 
