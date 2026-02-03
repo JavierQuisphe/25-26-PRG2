@@ -56,12 +56,8 @@ public class CalculadoraDescuentos {
             }
 
             // Calcular total del carrito
-            double p_total = 0;
-            int c_total = 0;
-            for(int i=0; i < n_prods; i++) {
-                p_total += precios_p[i] * cants_p[i];
-                c_total += cants_p[i];
-            }
+            double p_total = calcularTotal(precios_p, cants_p, n_prods);
+            int c_total = calcularCantidad(cants_p, n_prods);
 
             System.out.println("Configuracion del Descuento");
             System.out.print("Tipo de cliente (1=Normal, 2=Estudiante, 3=Jubilado, 4=VIP): ");
@@ -104,5 +100,13 @@ public class CalculadoraDescuentos {
             }
         }
         sc.close();
+    }
+
+    static double calcularTotal(double[] precios, int[] cantidades, int n) {
+        double total = 0;
+        for (int i = 0; i < n; i++) {
+            total += precios[i] * cantidades[i];
+        }
+        return total;
     }
 }
