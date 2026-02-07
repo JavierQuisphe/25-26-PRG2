@@ -33,12 +33,10 @@ public class pyEdlin {
 
             definirLineaActiva();
             editarLineaActiva();
+            borrarContenidoLineaActiva();
 
 
-            if (cmd.equals("B") || cmd.equals("b")) {
-                lineas[a] = ""; 
-
-            } else if (cmd.equals("S") || cmd.equals("s")) {
+            if (cmd.equals("S") || cmd.equals("s")) {
                 System.out.println("Saliendo...");
 
             } else {
@@ -83,6 +81,13 @@ public class pyEdlin {
                 System.out.print("Nuevo texto para linea " + a + ": ");
                 String nuevo = scanner.nextLine();
                 lineas[a] = nuevo; 
+
+            }
+    }
+
+    static void borrarContenidoLineaActiva() {
+        if (cmd.equals("B") || cmd.equals("b")) {
+                lineas[a] = ""; 
 
             }
     }
