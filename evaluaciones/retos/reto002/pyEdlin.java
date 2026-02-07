@@ -4,17 +4,15 @@ public class pyEdlin {
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        String[] t = new String[10]; // archivo de 10 lineas
-        int a = 0; // linea activa (mal nombrado)
+        String[] t = new String[10]; 
+        int a = 0; 
 
-        // llenar con vacios (medio inútil, pero ok)
         for (int i = 0; i < 10; i++) {
             t[i] = "";
         }
 
-        // texto inicial (hardcodeado)
         t[0] = "Bienvenidos al editor EDLIN";
         t[1] = "Utilice el menu inferior para editar el texto";
         t[2] = "------";
@@ -26,7 +24,6 @@ public class pyEdlin {
         String cmd = "";
         while (cmd.equalsIgnoreCase("S") == false) {
 
-            // imprimir TODO cada vez (ineficiente a propósito)
             System.out.println("--------------------------------------------------");
             for (int i = 0; i < 10; i++) {
                 if (i == a) {
@@ -39,14 +36,12 @@ public class pyEdlin {
             System.out.println("Comandos: [L]inea activa | [E]ditar | [B]orrar | [S]alir");
 
             System.out.print("Ingrese comando: ");
-            cmd = sc.nextLine(); // no recorta espacios, mal a propósito
+            cmd = scanner.nextLine(); 
 
             if (cmd.equals("L") || cmd.equals("l")) {
                 System.out.print("Numero de linea (0-9): ");
-                String x = sc.nextLine();
-                // sin try/catch, si pones letras se rompe (a propósito)
+                String x = scanner.nextLine();
                 int n = Integer.parseInt(x);
-                // validación mala (solo esta)
                 if (n >= 0 && n < 10) {
                     a = n;
                 } else {
@@ -55,14 +50,13 @@ public class pyEdlin {
 
             } else if (cmd.equals("E") || cmd.equals("e")) {
                 System.out.print("Nuevo texto para linea " + a + ": ");
-                String nuevo = sc.nextLine();
-                t[a] = nuevo; // no revisa largo, ni nada
+                String nuevo = scanner.nextLine();
+                t[a] = nuevo; 
 
             } else if (cmd.equals("B") || cmd.equals("b")) {
-                t[a] = ""; // borra contenido
+                t[a] = ""; 
 
             } else if (cmd.equals("S") || cmd.equals("s")) {
-                // sale
                 System.out.println("Saliendo...");
 
             } else {
@@ -70,6 +64,6 @@ public class pyEdlin {
             }
         }
 
-        sc.close();
+        scanner.close();
     }
 }
