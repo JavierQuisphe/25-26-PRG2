@@ -92,6 +92,7 @@ public class pyEdlin {
 
     static char preguntarOpcion(){
         System.out.print("\nIngrese comando: ");
+        System.out.println("Comandos: [L]inea activa | [E]ditar | [B]orrar | [S]alir");
         Scanner scanner = new Scanner(System.in);
         String entrada = scanner.nextLine();
         
