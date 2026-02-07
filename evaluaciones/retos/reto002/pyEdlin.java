@@ -2,28 +2,17 @@ import java.util.Scanner;
 
 public class pyEdlin {
 
+    
+
     public static void main(String[] args) {
         final int MAX_LINEAS = 10;
         String[] lineas = new String[MAX_LINEAS];
         int[] contadorDeLineas = {0};
         boolean estaFuncionando = true;
-
         Scanner scanner = new Scanner(System.in);
-
-
         int a = 0; 
 
-        for (int i = 0; i < 10; i++) {
-            lineas[i] = "";
-        }
-
-        lineas[0] = "Bienvenidos al editor EDLIN";
-        lineas[1] = "Utilice el menu inferior para editar el texto";
-        lineas[2] = "------";
-        lineas[3] = "[L] permite definir la linea activa";
-        lineas[4] = "[E] permite editar la linea activa";
-        lineas[5] = "[B] borra el contenido de la linea activa";
-        lineas[6] = "[S] sale del programa";
+        iniciarEditor();
 
         String cmd = "";
         while (cmd.equalsIgnoreCase("S") == false) {
@@ -69,5 +58,20 @@ public class pyEdlin {
         }
 
         scanner.close();
+    }
+
+    static void iniciarEditor() {
+        Scanner scanner = new Scanner(System.in);
+        for (int i = 0; i < 10; i++) {
+            lineas[i] = "";
+        }
+
+        lineas[0] = "Bienvenidos al editor EDLIN";
+        lineas[1] = "Utilice el menu inferior para editar el texto";
+        lineas[2] = "------";
+        lineas[3] = "[L] permite definir la linea activa";
+        lineas[4] = "[E] permite editar la linea activa";
+        lineas[5] = "[B] borra el contenido de la linea activa";
+        lineas[6] = "[S] sale del programa";
     }
 }
