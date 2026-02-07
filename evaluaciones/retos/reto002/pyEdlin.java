@@ -3,23 +3,27 @@ import java.util.Scanner;
 public class pyEdlin {
 
     public static void main(String[] args) {
+        final int MAX_LINEAS = 10;
+        String[] lineas = new String[MAX_LINEAS];
+        int[] contadorDeLineas = {0};
+        boolean estaFuncionando = true;
 
         Scanner scanner = new Scanner(System.in);
 
-        String[] t = new String[10]; 
+
         int a = 0; 
 
         for (int i = 0; i < 10; i++) {
-            t[i] = "";
+            lineas[i] = "";
         }
 
-        t[0] = "Bienvenidos al editor EDLIN";
-        t[1] = "Utilice el menu inferior para editar el texto";
-        t[2] = "------";
-        t[3] = "[L] permite definir la linea activa";
-        t[4] = "[E] permite editar la linea activa";
-        t[5] = "[B] borra el contenido de la linea activa";
-        t[6] = "[S] sale del programa";
+        lineas[0] = "Bienvenidos al editor EDLIN";
+        lineas[1] = "Utilice el menu inferior para editar el texto";
+        lineas[2] = "------";
+        lineas[3] = "[L] permite definir la linea activa";
+        lineas[4] = "[E] permite editar la linea activa";
+        lineas[5] = "[B] borra el contenido de la linea activa";
+        lineas[6] = "[S] sale del programa";
 
         String cmd = "";
         while (cmd.equalsIgnoreCase("S") == false) {
@@ -27,9 +31,9 @@ public class pyEdlin {
             System.out.println("--------------------------------------------------");
             for (int i = 0; i < 10; i++) {
                 if (i == a) {
-                    System.out.println(i + ":*| " + t[i]);
+                    System.out.println(i + ":*| " + lineas[i]);
                 } else {
-                    System.out.println(i + ": | " + t[i]);
+                    System.out.println(i + ": | " + lineas[i]);
                 }
             }
             System.out.println("--------------------------------------------------");
@@ -51,10 +55,10 @@ public class pyEdlin {
             } else if (cmd.equals("E") || cmd.equals("e")) {
                 System.out.print("Nuevo texto para linea " + a + ": ");
                 String nuevo = scanner.nextLine();
-                t[a] = nuevo; 
+                lineas[a] = nuevo; 
 
             } else if (cmd.equals("B") || cmd.equals("b")) {
-                t[a] = ""; 
+                lineas[a] = ""; 
 
             } else if (cmd.equals("S") || cmd.equals("s")) {
                 System.out.println("Saliendo...");
