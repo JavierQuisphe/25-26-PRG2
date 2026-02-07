@@ -1,12 +1,12 @@
 import java.util.Scanner;
 
 public class pyEdlin {
+    static final int MAX_LINEAS = 10;
+    static String[] lineas = new String[MAX_LINEAS];
+    static int lineaActiva = 0;
     public static void main(String[] args) {
-        final int MAX_LINEAS = 10;
-        String[] lineas = new String[MAX_LINEAS];
-        int LineaActiva = 0;
-        boolean estaFuncionando = true;
         Scanner scanner = new Scanner(System.in);
+        boolean estaFuncionando = true;
 
         iniciarEditor();
 
@@ -15,25 +15,13 @@ public class pyEdlin {
             switch(preguntarOpcion()){
                 case 'L', 'l' -> definirLineaActiva();
                 case 'E', 'e' -> editarLineaActiva();
-                case 'B', 'b' -> borrarContenidoLineaActiva()
+                case 'B', 'b' -> borrarContenidoLineaActiva();
                 case 'S', 's' -> estaFuncionando = !estaFuncionando;
                 default -> System.out.println("Error!");
             }
         } while (estaFuncionando);
 
         scanner.close();
-
-
-            
-
-
-            definirLineaActiva();
-            editarLineaActiva();
-            borrarContenidoLineaActiva();
-
-
-
-
     }
 
     static void mostrarPantalla(){
