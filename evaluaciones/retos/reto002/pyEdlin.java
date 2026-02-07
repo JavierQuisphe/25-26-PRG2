@@ -11,10 +11,11 @@ public class pyEdlin {
         boolean estaFuncionando = true;
         Scanner scanner = new Scanner(System.in);
         int a = 0; 
+        String cmd = "";
 
         iniciarEditor();
-
-        String cmd = "";
+        preguntarOpcion();
+        
         while (cmd.equalsIgnoreCase("S") == false) {
 
             System.out.println("--------------------------------------------------");
@@ -25,23 +26,13 @@ public class pyEdlin {
                     System.out.println(i + ": | " + lineas[i]);
                 }
             }
-            System.out.println("--------------------------------------------------");
-            System.out.println("Comandos: [L]inea activa | [E]ditar | [B]orrar | [S]alir");
 
-            System.out.print("Ingrese comando: ");
-            cmd = scanner.nextLine(); 
 
             definirLineaActiva();
             editarLineaActiva();
             borrarContenidoLineaActiva();
 
 
-            if (cmd.equals("S") || cmd.equals("s")) {
-                System.out.println("Saliendo...");
-
-            } else {
-                System.out.println("Comando no reconocido");
-            }
         }
 
         scanner.close();
@@ -90,5 +81,14 @@ public class pyEdlin {
                 lineas[a] = ""; 
 
             }
+    }
+
+    static void preguntarOpcion(){
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("--------------------------------------------------");
+            System.out.println("Comandos: [L]inea activa | [E]ditar | [B]orrar | [S]alir");
+
+            System.out.print("Ingrese comando: ");
+            cmd = scanner.nextLine(); 
     }
 }
