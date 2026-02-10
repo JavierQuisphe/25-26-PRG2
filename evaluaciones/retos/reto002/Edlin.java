@@ -1,11 +1,10 @@
 import java.util.Scanner;
 
-public class pyEdlin {
+public class Edlin {
     static final int MAX_LINEAS = 10;
     static String[] lineas = new String[MAX_LINEAS];
     static int lineaActiva = 0;
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
         boolean estaFuncionando = true;
 
         iniciarEditor();
@@ -21,7 +20,6 @@ public class pyEdlin {
             }
         } while (estaFuncionando);
 
-        scanner.close();
     }
 
     static void mostrarPantalla(){
