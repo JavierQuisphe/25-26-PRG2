@@ -2,6 +2,13 @@
 
 > *Entiéndase "deberíamos saber" como una combinación de "nos debería sonar", "no nos debería sorprender", "deberíamos conocer", "deberíamos saber manejar", en función del tema abordado. En cualquier caso, lo mínimo es "no nos debería sorprender" y deberíamos poder tener una mínima conversación o lectura sobre estos temas.*
 
+## 10 y 13 feb
+
+- Qué hacer ante un código heredado
+- Cómo ir tendiendo hacia una modularización en programación estructurada
+- Criterios para nombrar y describir commits
+- Solución de problemas con ramas
+
 ## 6 feb
 
 - Criterios de refactorización que conduzcan a un main() limpio como objetivo.
