@@ -23,10 +23,10 @@ public class ExamenMina {
 		while(explosiones < MAX_EXPLOSIONES && casillasReveladas < casillasLibres) {
 			mostrarTablero();
 
-			int x = leerCordenada(scanner, "X", FILAS);
+			int x = leerCoordenada(scanner, "X", FILAS);
 			
 
-			int y = leerCordenada(scanner, "Y", COLUMNAS);
+			int y = leerCoordenada(scanner, "Y", COLUMNAS);
 
 			int fila = x - 1;
 			int columna = y - 1;
@@ -34,10 +34,10 @@ public class ExamenMina {
 			evaluarCasilla(fila, columna);
 		}
 
-	mostrarTableroFinal();	
-	mostrarResultado();
 
-	Scanner.close();
+		mostrarTableroFinal();
+		mostrarResultado();
+		scanner.close();
 	}
 
 	static void inicializarTablero() {
@@ -106,7 +106,7 @@ public class ExamenMina {
 		if (tableroVisible[fila][columna] != '-') {
 			System.out.println("----------------");
 			System.out.println("Casilla ya revelada. Intente nuevamente.");
-			continue;
+			return;
 		}
 
 		System.out.println("----------------");
