@@ -23,42 +23,13 @@ public class ExamenMina {
 		while(explosiones < MAX_EXPLOSIONES && casillasReveladas < casillasLibres) {
 			mostrarTablero();
 
-			int x = 0;
-			boolean xValido = false;
-			while (!xValido) {
-				System.out.print("Ingrese X");
-				if (scanner.hasNextInt()) {
-					x = scanner.nextInt();
-					if (x >=1 && x <= FILAS) {
-						xValido = true;
-					} else {
-						System.out.println("Valor fuera de rango. Ingrese un número entre 1 y " + FILAS + ".");
-					}
-				} else {
-					System.out.println("Entrada no válida. Ingrese un número entero.");
-					scanner.next();
-				}
-			}
+			int x = leerCordenada(scanner, "X", FILAS);
+			
 
-			int y = 0;
-			boolean yValido = false;
-			while (!yValido) {
-				System.out.print("Ingrese Y");
-				if (Scanner.hasNextInt()) {
-					y = scanner.nextInt();
-					if (y >= 1 && y <= COLUMNAS) {
-						yValido = true;
-					} else {
-						System.out.println("Valor fuera de rango. Ingrese un número entre 1 y " + COLUMNAS + ".");
-					}
-				} else {
-					System.out.println("Entrada no válida. Ingrese un número entero.");
-					scanner.next();
-				}
-		}
+			int y = leerCordenada(scanner, "Y", COLUMNAS);
 
-		int fila = x - 1;
-		int columna = y - 1;
+			int fila = x - 1;
+			int columna = y - 1;
 
 		if (tableroVisible[fila][columna] != '-') {
 			System.out.println("----------------");
@@ -143,4 +114,26 @@ public class ExamenMina {
 			}
 			System.out.println("================");
 	}
+
+	static int leerCoordenada(Scanner scanner, String nombre, int maximo) {
+        int valor = 0;
+        boolean valido = false;
+
+        while (!valido) {
+            System.out.println("Ingrese " + nombre);
+            if (scanner.hasNextInt()) {
+                valor = scanner.nextInt();
+                if (valor >= 1 && valor <= maximo) {
+                    valido = true;
+                } else {
+                    System.out.println("Valor fuera de rango. Ingrese entre 1 y " + maximo + ".");
+                }
+            } else {
+                System.out.println("Entrada inválida. Ingrese un número entero.");
+                scanner.next(); 
+            }
+        }
+
+        return valor;
+    }
 }
