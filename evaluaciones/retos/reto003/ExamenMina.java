@@ -84,5 +84,26 @@ public class ExamenMina {
 					scanner.next();
 				}
 		}
+
+		int fila = x - 1;
+		int columna = y - 1;
+
+		if (tableroVisible[fila][columna] != '-') {
+			System.out.println("----------------");
+			System.out.println("Casilla ya revelada. Intente nuevamente.");
+			continue;
+		}
+
+		System.out.println("----------------");
+
+		if (tablero[fila][columna]) {
+			tableroVisible[fila][columna] = "*";
+			explosiones++;
+			System.out.println("¡Mina! (Explosión " + explosiones + " de " + MAX_EXPLOSIONES + ")");
+		} else {
+			tableroVisible[fila][columna] = '.';
+			casillasReveladas++;
+			System.out.println("¡Libre!");
+		}
 	}
 }
