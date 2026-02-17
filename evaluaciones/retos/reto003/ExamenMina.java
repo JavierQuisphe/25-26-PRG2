@@ -34,28 +34,9 @@ public class ExamenMina {
 			evaluarCasilla(fila, columna);
 		}
 
-	System.out.println("================");
-	System.out.print("  ");
-	for (int j = 1; j <= COLUMNAS; j++) {
-		System.out.print(j + " ");
-	}
-	System.out.println();
-	for (int i = 0; i < FILAS; i++) {
-		System.out.print((i + 1) + " ");
-		for (int j = 0; j < COLUMNAS; j++) {
-			System.out.print(tableroVisible[i][j] + " ");
-		}
-		System.out.println();
-	}
-	System.out.println("================");
+	mostrarTableroFinal();	
+	mostrarResultado();
 
-	if (explosiones >= MAX_EXPLOSIONES) {
-		System.out.println("¡Has perdido! Has alcanzado el límite de explosiones.");
-	} else {
-		System.out.println("¡Felicidades! Has ganado al revelar todas las casillas libres.");
-	}
-
-	System.out.println("Explosiones:" + explosiones + " | Casillas reveladas: " + casillasReveladas);
 	Scanner.close();
 	}
 
@@ -139,5 +120,32 @@ public class ExamenMina {
 			casillasReveladas++;
 			System.out.println("¡Libre!");
 		}
+	}
+
+	static void mostrarTableroFinal() {
+		System.out.println("================");
+	System.out.print("  ");
+	for (int j = 1; j <= COLUMNAS; j++) {
+		System.out.print(j + " ");
+	}
+	System.out.println();
+	for (int i = 0; i < FILAS; i++) {
+		System.out.print((i + 1) + " ");
+		for (int j = 0; j < COLUMNAS; j++) {
+			System.out.print(tableroVisible[i][j] + " ");
+		}
+		System.out.println();
+	}
+	System.out.println("================");
+	}
+
+	static void mostrarResultado() {
+		if (explosiones >= MAX_EXPLOSIONES) {
+		System.out.println("¡Has perdido! Has alcanzado el límite de explosiones.");
+	} else {
+		System.out.println("¡Felicidades! Has ganado al revelar todas las casillas libres.");
+	}
+
+	System.out.println("Explosiones:" + explosiones + " | Casillas reveladas: " + casillasReveladas);
 	}
 }
