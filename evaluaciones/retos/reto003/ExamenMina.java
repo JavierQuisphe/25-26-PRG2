@@ -18,19 +18,14 @@ public class ExamenMina {
 		Scanner scanner = new Scanner(System.in);
 		Random random = new Random();
 
-		for (int i = 0; i < FILAS; i++) {
-			for(int j = 0; j < COLUMNAS; j++) {
-				tableroVisible[i][j] = '-';
-				tablero[i][j] = false;
-			} 
-		}
+		inicializarTablero();
 
 		int minasColocadas = 0;
 		while (minasColocadas < TOTAL_MINAS) {
 			int fila = random.nextInt(FILAS);
 			int columna = random.nextInt(COLUMNAS);
-			if(!tablero[filas][columna]) {
-				tablero[filas][columna] = true;
+			if(!tablero[fila][columna]) {
+				tablero[fila][columna] = true;
 				minasColocadas++;
 			}
 		}
@@ -97,7 +92,7 @@ public class ExamenMina {
 		System.out.println("----------------");
 
 		if (tablero[fila][columna]) {
-			tableroVisible[fila][columna] = "*";
+			tableroVisible[fila][columna] = 'X';
 			explosiones++;
 			System.out.println("¡Mina! (Explosión " + explosiones + " de " + MAX_EXPLOSIONES + ")");
 		} else {
@@ -130,5 +125,14 @@ public class ExamenMina {
 
 	System.out.println("Explosiones:" + explosiones + " | Casillas reveladas: " + casillasReveladas);
 	Scanner.close();
+	}
+
+	static void inicializarTablero() {
+		for (int i = 0; i < FILAS; i++) {
+			for(int j = 0; j < COLUMNAS; j++) {
+				tableroVisible[i][j] = '-';
+				tablero[i][j] = false;
+			} 
+		}
 	}
 }
