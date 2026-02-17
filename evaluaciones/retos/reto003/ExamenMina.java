@@ -24,5 +24,15 @@ public class ExamenMina {
 				tablero[i][j] = false;
 			} 
 		}
+
+		int minasColocadas = 0;
+		while (minasColocadas < TOTAL_MINAS) {
+			int fila = random.nextInt(FILAS);
+			int columna = random.nextInt(COLUMNAS);
+			if(!tablero[filas][columna]) {
+				tablero[filas][columna] = true;
+				minasColocadas++;
+			}
+		}
 	}
 }
