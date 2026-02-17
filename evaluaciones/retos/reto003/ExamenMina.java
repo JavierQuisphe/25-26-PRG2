@@ -21,20 +21,7 @@ public class ExamenMina {
         minasColocadas();
 
 		while(explosiones < MAX_EXPLOSIONES && casillasReveladas < casillasLibres) {
-			System.out.println("================");
-			System.out.print("  ");
-			for (int j = 1; j <= COLUMNAS; j++) {
-				System.out.print(j + " ");
-			}
-			System.out.println();
-			for (int i = 0; i < FILAS; i++) {
-				System.out.print((i + 1) + " ");
-				for (int j = 0; j < COLUMNAS; j++) {
-					System.out.print(tableroVisible[i][j] + " ");
-				}
-				System.out.println();
-			}
-			System.out.println("================");
+			mostrarTablero();
 
 			int x = 0;
 			boolean xValido = false;
@@ -129,7 +116,7 @@ public class ExamenMina {
 	static void minasColocadas() {
 		Random random = new Random();
 		int minasColocadas = 0;
-		
+
 		while (minasColocadas < TOTAL_MINAS) {
 			int fila = random.nextInt(FILAS);
 			int columna = random.nextInt(COLUMNAS);
@@ -138,5 +125,22 @@ public class ExamenMina {
 				minasColocadas++;
 			}
 		}
+	}
+
+	static void mostrarTablero() {
+		System.out.println("================");
+			System.out.print("  ");
+			for (int j = 1; j <= COLUMNAS; j++) {
+				System.out.print(j + " ");
+			}
+			System.out.println();
+			for (int i = 0; i < FILAS; i++) {
+				System.out.print((i + 1) + " ");
+				for (int j = 0; j < COLUMNAS; j++) {
+					System.out.print(tableroVisible[i][j] + " ");
+				}
+				System.out.println();
+			}
+			System.out.println("================");
 	}
 }
