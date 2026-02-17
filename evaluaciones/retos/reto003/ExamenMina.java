@@ -50,6 +50,39 @@ public class ExamenMina {
 				System.out.println();
 			}
 			System.out.println("================");
+
+			int x = 0;
+			boolean xValido = false;
+			while (!xValido) {
+				System.out.print("Ingrese X");
+				if (scanner.hasNextInt()) {
+					x = scanner.nextInt();
+					if (x >=1 && x <= FILAS) {
+						xValido = true;
+					} else {
+						System.out.println("Valor fuera de rango. Ingrese un número entre 1 y " + FILAS + ".");
+					}
+				} else {
+					System.out.println("Entrada no válida. Ingrese un número entero.");
+					scanner.next();
+				}
+			}
+
+			int y = 0;
+			boolean yValido = false;
+			while (!yValido) {
+				System.out.print("Ingrese Y");
+				if (Scanner.hasNextInt()) {
+					y = scanner.nextInt();
+					if (y >= 1 && y <= COLUMNAS) {
+						yValido = true;
+					} else {
+						System.out.println("Valor fuera de rango. Ingrese un número entre 1 y " + COLUMNAS + ".");
+					}
+				} else {
+					System.out.println("Entrada no válida. Ingrese un número entero.");
+					scanner.next();
+				}
 		}
 	}
 }
