@@ -31,24 +31,8 @@ public class ExamenMina {
 			int fila = x - 1;
 			int columna = y - 1;
 
-		if (tableroVisible[fila][columna] != '-') {
-			System.out.println("----------------");
-			System.out.println("Casilla ya revelada. Intente nuevamente.");
-			continue;
+			evaluarCasilla(fila, columna);
 		}
-
-		System.out.println("----------------");
-
-		if (tablero[fila][columna]) {
-			tableroVisible[fila][columna] = 'X';
-			explosiones++;
-			System.out.println("¡Mina! (Explosión " + explosiones + " de " + MAX_EXPLOSIONES + ")");
-		} else {
-			tableroVisible[fila][columna] = '.';
-			casillasReveladas++;
-			System.out.println("¡Libre!");
-		}
-	}
 
 	System.out.println("================");
 	System.out.print("  ");
@@ -136,4 +120,24 @@ public class ExamenMina {
 
         return valor;
     }
+
+	static void evaluarCasilla(int fila, int columna) {
+		if (tableroVisible[fila][columna] != '-') {
+			System.out.println("----------------");
+			System.out.println("Casilla ya revelada. Intente nuevamente.");
+			continue;
+		}
+
+		System.out.println("----------------");
+
+		if (tablero[fila][columna]) {
+			tableroVisible[fila][columna] = 'X';
+			explosiones++;
+			System.out.println("¡Mina! (Explosión " + explosiones + " de " + MAX_EXPLOSIONES + ")");
+		} else {
+			tableroVisible[fila][columna] = '.';
+			casillasReveladas++;
+			System.out.println("¡Libre!");
+		}
+	}
 }
