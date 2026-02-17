@@ -16,19 +16,9 @@ public class ExamenMina {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		Random random = new Random();
 
 		inicializarTablero();
-
-		int minasColocadas = 0;
-		while (minasColocadas < TOTAL_MINAS) {
-			int fila = random.nextInt(FILAS);
-			int columna = random.nextInt(COLUMNAS);
-			if(!tablero[fila][columna]) {
-				tablero[fila][columna] = true;
-				minasColocadas++;
-			}
-		}
+        minasColocadas();
 
 		while(explosiones < MAX_EXPLOSIONES && casillasReveladas < casillasLibres) {
 			System.out.println("================");
@@ -133,6 +123,20 @@ public class ExamenMina {
 				tableroVisible[i][j] = '-';
 				tablero[i][j] = false;
 			} 
+		}
+	}
+
+	static void minasColocadas() {
+		Random random = new Random();
+		int minasColocadas = 0;
+		
+		while (minasColocadas < TOTAL_MINAS) {
+			int fila = random.nextInt(FILAS);
+			int columna = random.nextInt(COLUMNAS);
+			if(!tablero[fila][columna]) {
+				tablero[fila][columna] = true;
+				minasColocadas++;
+			}
 		}
 	}
 }
