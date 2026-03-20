@@ -11,6 +11,10 @@ public class Fraccion {
 
     }
 
- 
+    public void sumar(Fraccion fraccion){}
+    public void restar(Fraccion fraccion){}
+    public void multiplicar(Fraccion fraccion){}
+    public void dividir(Fraccion fraccion){}
+    public void potenciar(int exponente){}
 
 }
