@@ -7,6 +7,10 @@ public class Fraccion {
     public Fraccion (Fraccion fraccion){}
     public Fraccion(){}
 
-    
+    public Fraccion clonar(){
+
+    }
+
+ 
 
 }
