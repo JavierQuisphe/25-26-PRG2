@@ -2,31 +2,87 @@ public class Fraccion {
     private int numerador;
     private int denominador;
 
-    public Fraccion (int numerador, int denominador) {}
-    public Fraccion (int numero){}
-    public Fraccion (Fraccion fraccion){}
-    public Fraccion(){}
-
-    public Fraccion clonar(){
-
+    public Fraccion (int numerador, int denominador) {
+        this.numerador   = numerador;
+        this.denominador = denominador;
+    }
+    public Fraccion (int numero){
+        this(numero, 1);
+    }
+    public Fraccion (Fraccion fraccion){
+        this(fraccion.numerador, fraccion.denominador);
+    }
+    public Fraccion(){
+        this(0, 1);
     }
 
-    public void sumar(Fraccion fraccion){}
-    public void restar(Fraccion fraccion){}
-    public void multiplicar(Fraccion fraccion){}
-    public void dividir(Fraccion fraccion){}
-    public void potenciar(int exponente){}
+    public Fraccion clonar(){
+        return new Fraccion(this);
+    }
 
-    public boolean esMayor(){}
-    public boolean esMenor(){}
-    public boolean equals(){}
+    public void sumar(Fraccion fraccion){
+        this.numerador   = this.numerador * fraccion.denominador
+                         + fraccion.numerador * this.denominador;
+        this.denominador = this.denominador * fraccion.denominador;
+    }
+    public void restar(Fraccion fraccion){
+        this.numerador   = this.numerador * fraccion.denominador
+                         - fraccion.numerador * this.denominador;
+        this.denominador = this.denominador * fraccion.denominador;
+    }
+    public void multiplicar(Fraccion fraccion){
+        this.numerador   = this.numerador   * fraccion.numerador;
+        this.denominador = this.denominador * fraccion.denominador;
+    }
+    public void dividir(Fraccion fraccion){
+        this.numerador   = this.numerador   * fraccion.denominador;
+        this.denominador = this.denominador * fraccion.numerador;
+    }
+    public void potenciar(int exponente){
+        if (exponente == 0) {
+            this.numerador   = 1;
+            this.denominador = 1;
+        } else if (exponente > 0) {
+            int baseNum = this.numerador;
+            int baseDen = this.denominador;
+            for (int i = 1; i < exponente; i++) {
+                this.numerador   *= baseNum;
+                this.denominador *= baseDen;
+            }
+        }
+    }
 
-    public void mostrar(){}
+    public boolean esMayor(Fraccion fraccion){
+        return this.numerador * fraccion.denominador
+             > fraccion.numerador * this.denominador;
+    }
+    public boolean esMenor(Fraccion fraccion){
+        return this.numerador * fraccion.denominador
+             < fraccion.numerador * this.denominador;
+    }
+    public boolean equals(Fraccion fraccion){
+        return this.numerador   == fraccion.numerador
+            && this.denominador == fraccion.denominador;
+    }
 
-    public void invertir(){}
-    public void oponer(){}
+    public void mostrar(){
+        System.out.println(numerador + "/" + denominador);
+    }
 
-    public void simplificar(){}
+    public void invertir(){
+        int temporal = this.numerador;
+        this.numerador   = this.denominador;
+        this.denominador = temporal;
+    }
+    public void oponer(){
+        this.numerador = -this.numerador;
+    }
+
+    public void simplificar(){
+        int mcd = calcularMCD(Math.abs(numerador), denominador);
+        this.numerador   = this.numerador   / mcd;
+        this.denominador = this.denominador / mcd;
+    }
 
     public int calcularMCD(int a, int b) {
         while (b != 0) {
