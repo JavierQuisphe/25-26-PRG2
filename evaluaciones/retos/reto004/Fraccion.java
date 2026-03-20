@@ -25,4 +25,6 @@ public class Fraccion {
 
     public void invertir(){}
     public void oponer(){}
+
+    public void simplificar(){}
 }
