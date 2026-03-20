@@ -22,4 +22,7 @@ public class Fraccion {
     public boolean equals(){}
 
     public void mostrar(){}
+
+    public void invertir(){}
+    public void oponer(){}
 }
