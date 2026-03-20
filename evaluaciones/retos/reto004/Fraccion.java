@@ -17,4 +17,9 @@ public class Fraccion {
     public void dividir(Fraccion fraccion){}
     public void potenciar(int exponente){}
 
+    public boolean esMayor(){}
+    public boolean esMenor(){}
+    public boolean equals(){}
+
+    public void mostrar(){}
 }
