@@ -9,5 +9,6 @@ Los retos se irán proponiendo, habitualmente luego de una disertación teórica
 [Reto 003](reto003/README.md)|reto-003|17 febrero, 14:15h|[Entregas](https://github.com/mmasias/25-26-PRG2/pulls?q=is%3Apr+is%3Aopen+base%3Areto-003)
 [Reto 004](reto004/README.md)|reto-004|20 marzo, 10:15h|[Entregas](https://github.com/mmasias/25-26-PRG2/pulls?q=is%3Apr+is%3Aopen+base%3Areto-004)
 [Reto 005](reto005/README.md)|reto-005|28 abril, 12:15h|[Entregas](https://github.com/mmasias/25-26-PRG2/pulls?q=is%3Apr+is%3Aopen+base%3Areto-005)
+[Reto 006](reto006/README.md)|reto-006|12 mayo, 12:15h|[Entregas](https://github.com/mmasias/25-26-PRG2/pulls?q=is%3Apr+is%3Aopen+base%3Areto-006)
 
 > |[Entregas incorrectas](https://github.com/mmasias/25-26-PRG2/pulls?q=is%3Apr+is%3Aopen+base%3Amain)
