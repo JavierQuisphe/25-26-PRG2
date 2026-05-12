@@ -58,7 +58,7 @@ public class Blackjack {
         String estado = obtenerEstado(puntaje);
 
         System.out.println(SEPARADOR);
-        System.out.println("Mano: " + mano + " - Puntaje: " + puntaje + " ==> " + estado);
+        System.out.println("Mano: " + mano.aTexto() + " - Puntaje: " + puntaje + " ==> " + estado);
         System.out.println(SEPARADOR);
     }
 

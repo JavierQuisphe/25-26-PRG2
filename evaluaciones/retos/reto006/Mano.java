@@ -48,12 +48,11 @@ public class Mano {
         return cartas.size();
     }
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        for (Carta carta : cartas) {
-            sb.append(carta.toString());
+    public String aTexto() {
+        String resultado = "";
+        for (int i = 0; i < cartas.size(); i++) {
+            resultado = resultado + cartas.get(i).aTexto();
         }
-        return sb.toString();
+        return resultado;
     }
 }

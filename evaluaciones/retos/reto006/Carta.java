@@ -35,7 +35,7 @@ public class Carta {
         return palo;
     }
 
-    public String toString() {
+    public String aTexto() {
         return "[" + valor + " " + palo + "]";
     }
 }
