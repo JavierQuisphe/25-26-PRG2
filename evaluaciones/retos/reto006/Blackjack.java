@@ -41,10 +41,24 @@ public class Blackjack {
                     }
                 }
                 case 2 -> { 
+                    int puntaje = mano.getPuntaje();
+                    System.out.println(SEPARADOR);
+                    System.out.println("Te plantaste con " + puntaje + " puntos. ==> Ganó");
+                    System.out.println(SEPARADOR);
+                    mostrarMenu();
+                    int siguiente = leerOpcion();
+                    if (siguiente == 3) {
+                        dealer.iniciarRonda(mano);
+                        mostrarEstado();
+                    } else if (siguiente == 4) {
+                        jugando = false;
+                    }
+                }
+                case 3 -> { 
                     dealer.iniciarRonda(mano);
                     mostrarEstado();
                 }
-                case 3 -> jugando = false; 
+                case 4 -> jugando = false; 
                 default -> System.out.println("Opción inválida. Intente de nuevo.");
             }
         }
@@ -64,8 +78,9 @@ public class Blackjack {
 
     private void mostrarMenu() {
         System.out.println("1. Pedir");
-        System.out.println("2. Empezar de nuevo");
-        System.out.println("3. Salir");
+        System.out.println("2. Plantarse");
+        System.out.println("3. Empezar de nuevo");
+        System.out.println("4. Salir");
         System.out.println(SEPARADOR);
     }
 
